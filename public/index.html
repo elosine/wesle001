@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+  <button id="p1">P1</button>
+  <button id="p2">P2</button>
+  <button id="p3">P3</button>
+  <button id="p4">P4</button>
+  <script type="text/javascript" src="lib/osc.min.js"></script>
+  <script type="text/javascript">
+    var osc = new OSC();
+    osc.open({
+      host: '192.168.1.107'
+    }); // connect by default to ws://localhost:8080
+    // osc.open( ); // connect by default to ws://localhost:8080
+    document.addEventListener('keydown', function(event) {
+      event.preventDefault();
+      // keysPressed[event.key] = true;
+      if (event.key == 'ArrowUp') {
+        console.log('p1');
+        var message = new OSC.Message('/p1', Math.random());
+        osc.send(message);
+      }
+    });
+    document.addEventListener('keydown', function(event) {
+      event.preventDefault();
+      if (event.key == 'ArrowDown') {
+        console.log('p2');
+        var message = new OSC.Message('/p2', Math.random());
+        osc.send(message);
+      }
+    });
+    document.addEventListener('keydown', function(event) {
+      event.preventDefault();
+      if (event.key == 'ArrowLeft') {
+        console.log('p3');
+        var message = new OSC.Message('/p3', Math.random());
+        osc.send(message);
+      }
+    });
+    document.addEventListener('keydown', function(event) {
+      event.preventDefault();
+      if (event.key == 'ArrowRight') {
+        console.log('p4');
+        var message = new OSC.Message('/p4', Math.random());
+        osc.send(message);
+      }
+    });
+  </script>
+
+
+
+</body>
+
+</html>

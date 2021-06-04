@@ -1,0 +1,25 @@
+{
+  "name": "wesle001",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elosine/wesle001.git"
+  },
+  "author": "Justin Wen-Lo Yang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elosine/wesle001/issues"
+  },
+  "homepage": "https://github.com/elosine/wesle001#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "osc-js": "^2.1.2",
+    "websockets": "^0.2.0"
+  }
+}
